@@ -28,7 +28,7 @@ const InputData = ({ InputDiv, setInputDiv, UpdatedData, setUpdatedData, fetchDa
     if (Data.title === "" || Data.desc === "") {
       alert("All fields are required");
     } else {
-      await axios.post("http://localhost:3000/api/v2/create-task", Data, {
+      await axios.post("https://taskify-iota-three.vercel.app/api/v2/create-task", Data, {
         headers,
       });
       fetchData();
@@ -41,7 +41,7 @@ const InputData = ({ InputDiv, setInputDiv, UpdatedData, setUpdatedData, fetchDa
       alert("All fields are required");
     } else {
       await axios.put(
-        `http://localhost:3000/api/v2/update-task/${UpdatedData.id}`,
+        `https://taskify-iota-three.vercel.app/api/v2/update-task/${UpdatedData.id}`,
         Data,
         { headers }
       );

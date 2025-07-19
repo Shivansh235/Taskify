@@ -14,7 +14,7 @@ const IncompletedTasks = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/v2/get-incomp-tasks",
+        "https://taskify-iota-three.vercel.app/api/v2/get-incomp-tasks",
         { headers }
       );
       setData(response.data.tasks);

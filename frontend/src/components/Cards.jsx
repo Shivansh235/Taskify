@@ -14,7 +14,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData, fetchData }) => {
   const handleCompleteTask = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/v2/update-comp-task/${id}`,
+        `https://taskify-iota-three.vercel.app/api/v2/update-comp-task/${id}`,
         {},
         { headers }
       );
@@ -28,7 +28,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData, fetchData }) => {
   const handleImportant = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/v2/update-imp-task/${id}`,
+        `https://taskify-iota-three.vercel.app/api/v2/update-imp-task/${id}`,
         {},
         { headers }
       );
@@ -47,7 +47,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData, fetchData }) => {
   const deleteTask = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/v2/delete-task/${id}`,
+        `https://taskify-iota-three.vercel.app/api/v2/delete-task/${id}`,
         { headers }
       );
       toast(response.data.message);

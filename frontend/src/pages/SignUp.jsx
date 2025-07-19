@@ -17,7 +17,7 @@ const SignUp = () => {
         alert("All fields are required");
       } else {
         const response = await axios.post(
-          "http://localhost:3000/api/v1/signup",
+          "https://taskify-iota-three.vercel.app/api/v1/signup",
           Data
         );
         setData({ username: "", email: "", password: "" });
