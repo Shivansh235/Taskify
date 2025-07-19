@@ -11,7 +11,6 @@ import TaskAPI from './routes/task.js';
 dotenv.config({ path: '.env.local' });
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
 connectDB();
@@ -21,18 +20,13 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/v2', TaskAPI); // Task CRUD routes
-app.use('/api/v1', UserAPI); // User routes: login/signup
-
+app.use('/api/v2', TaskAPI);
+app.use('/api/v1', UserAPI);
 
 // Root route
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello from Task Manager API!');
 });
 
-
-
-// Start server
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// ✅ Export the app instead of listening to a port
+export default app;
