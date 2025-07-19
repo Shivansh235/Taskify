@@ -15,7 +15,7 @@ This is a simple full-stack Task Management App built using the MERN stack: Mong
   - Incompleted tasks
 - User can delete any task
 - User authentication with JWT token
-- Fully responsive on mobile, tablet, and desktop
+- Fully responsive with mobile first approach.
 
 ## Technologies Used
 

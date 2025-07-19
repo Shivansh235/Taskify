@@ -15,9 +15,21 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
   const data = [
     { title: "All tasks", icons: <CgNotes />, link: "/" },
-    { title: "Important tasks", icons: <MdLabelImportant />, link: "/importantTasks" },
-    { title: "Completed tasks", icons: <FaCheckDouble />, link: "/completedTasks" },
-    { title: "Incompleted tasks", icons: <TbNotebookOff />, link: "/incompletedTasks" },
+    {
+      title: "Important tasks",
+      icons: <MdLabelImportant />,
+      link: "/importantTasks",
+    },
+    {
+      title: "Completed tasks",
+      icons: <FaCheckDouble />,
+      link: "/completedTasks",
+    },
+    {
+      title: "Incompleted tasks",
+      icons: <TbNotebookOff />,
+      link: "/incompletedTasks",
+    },
   ];
 
   const [Data, setData] = useState();
@@ -37,7 +49,10 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v2/get-all-tasks", { headers });
+        const response = await axios.get(
+          "http://localhost:3000/api/v2/get-all-tasks",
+          { headers }
+        );
         setData(response.data.data);
       } catch (error) {
         console.error("Error fetching tasks:", error);
@@ -49,11 +64,17 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   }, []);
 
   return (
-    <div className={`bg-slate-900 rounded-xl p-4 pb-12 border border-gray-600 sm:block ${isOpen ? "block" : "hidden sm:block"}`}>
+    <div
+      className={`bg-slate-900 rounded-xl p-4 pb-12 border border-gray-600 sm:block ${
+        isOpen ? "block" : "hidden sm:block"
+      }`}
+    >
       {Data && (
         <div className="gap-2 flex flex-col justify-between">
           <Link to="/" className="cursor-pointer">
-            <h3 className="text-xl font-semibold break-words">{Data.username}</h3>
+            <h3 className="text-xl font-semibold break-words">
+              {Data.username}
+            </h3>
           </Link>
           <h4 className="mb-1 text-gray-400 break-words">{Data.email}</h4>
           <hr />
@@ -85,9 +106,30 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       </div>
 
       <div className="flex justify-center mt-10 gap-5 text-xl text-gray-400">
-        <a href="https://github.com/shivansh235" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaGithub /></a>
-        <a href="https://www.linkedin.com/in/shivansh-kasaudhan-09a4042a7/" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaLinkedin /></a>
-        <a href="https://x.com/SHIVANSHKAS2005" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaTwitter /></a>
+        <a
+          href="https://github.com/shivansh235"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/shivansh-kasaudhan-09a4042a7/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://x.com/SHIVANSHKAS2005"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white"
+        >
+          <FaTwitter />
+        </a>
       </div>
     </div>
   );

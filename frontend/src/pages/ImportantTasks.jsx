@@ -18,7 +18,6 @@ const ImportantTasks = () => {
         { headers }
       );
       setData(response.data.tasks);
-      console.log("Fetched tasks:", response.data.tasks);
     } catch (error) {
       console.error("Error fetching tasks:", error);
     }
