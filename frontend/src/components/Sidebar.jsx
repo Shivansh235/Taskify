@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
     const fetch = async () => {
       try {
         const response = await axios.get(
-          "https://taskify-iota-three.vercel.app/api/v2/get-all-tasks",
+          "http://localhost:3000/api/v2/get-all-tasks",
           { headers }
         );
         setData(response.data.data);

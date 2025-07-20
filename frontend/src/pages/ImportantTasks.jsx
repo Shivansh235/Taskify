@@ -14,7 +14,7 @@ const ImportantTasks = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://taskify-iota-three.vercel.app/api/v2/get-imp-tasks",
+        "http://localhost:3000/api/v2/get-imp-tasks",
         { headers }
       );
       setData(response.data.tasks);
